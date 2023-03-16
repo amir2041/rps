@@ -13,9 +13,7 @@ def get_player_choice():
 def get_computer_choice():
     return random.choice(choices)
 
-while True:
-    player_choice=get_player_choice()
-    computer_choice=get_computer_choice()
+def who_is_the_winner(player_choice,computer_choice):
     if(player_choice==computer_choice):
         print(f"you are tie! your choice:{player_choice}\n computer:{computer_choice}")
     elif((player_choice=="paper" and computer_choice=="rock") \
@@ -24,6 +22,14 @@ while True:
      print(f"player is winner \n your choice:{player_choice}\n computer:{computer_choice}")
     else:
         print(f"computer is winner\nyour choice:{player_choice}\n computer:{computer_choice}")
+
+
+
+while True:
+    player_choice=get_player_choice()
+    computer_choice=get_computer_choice()
+    who_is_the_winner(player_choice,computer_choice)
+
     c1=input("do you want to continue (y/n)?")
     if(c1=="n"):
         break
