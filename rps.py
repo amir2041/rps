@@ -1,13 +1,19 @@
 import random
 
 choices=["paper","rock","scessors"]
+def get_player_choice():
+    while True:
+        player_ch=input("please enter 1 to 3:")
+        if(int(player_ch) >3):
+            continue
+        else:
+            player_choice=choices[int(player_ch)-1]
+            return player_choice
+
+
 
 while True:
-    player_ch=input("please enter 1 to 3:")
-    if(int(player_ch) >3):
-        continue
-
-    player_choice=choices[int(player_ch)-1]
+    player_choice=get_player_choice()
     computer_choice=random.choice(choices)
     if(player_choice==computer_choice):
         print(f"you are tie! your choice:{player_choice}\n computer:{computer_choice}")
