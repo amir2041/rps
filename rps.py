@@ -10,11 +10,12 @@ def get_player_choice():
             player_choice=choices[int(player_ch)-1]
             return player_choice
 
-
+def get_computer_choice():
+    return random.choice(choices)
 
 while True:
     player_choice=get_player_choice()
-    computer_choice=random.choice(choices)
+    computer_choice=get_computer_choice()
     if(player_choice==computer_choice):
         print(f"you are tie! your choice:{player_choice}\n computer:{computer_choice}")
     elif((player_choice=="paper" and computer_choice=="rock") \
